@@ -1,0 +1,35 @@
+1. Definição do Problema
+Em plataformas online, como as redes sociais, fóruns, seções de comentários de sites de diversos, é comum possuir uma grande quantidade de comentários. Infelizmente, nem todos estes comentários são positivos. Comentários tóxicos, como abuso verbal, insultos, ameaças ou discursos de ódio, são frequentes e criam um ambiente hostil para usuários. E a presença destes comentários tóxicos não afeta negativamente apenas a experiência do usuário, mas também pode chegar a diminuir a participação da comunidade na discussão, aumentando o desgaste emocional dos moderadores humanos e possíveis problemas legais para a plataforma. A moderação manual de todos os comentários é impraticável devido ao gigantesco volume de comentários diários.
+
+2. Análise dos Dados
+Os dados utilizados para o treinamento e avaliação do modelo foram extraídos de uma base de dados de comentários online. O processo de preparação dos dados incluiu:
+
+> Carregamento e Visualização: Análise inicial para entender a estrutura e conteúdo dos dados.
+
+> Limpeza dos Dados: Remoção de duplicatas, tratamento de valores ausentes e normalização dos textos para garantir consistência.
+
+> Tokenização e Vetorização: Conversão dos textos em vetores numéricos para serem utilizados pelo modelo de machine learning.
+
+3. Modelo Base Escolhido
+O modelo base escolhido para este projeto foi o RandomForestClassifier combinado com MultiOutputClassifier. Esta escolha foi feita devido à capacidade do RandomForest de lidar com dados complexos e multivariados, enquanto o MultiOutputClassifier permite a classificação simultânea em múltiplas categorias de toxicidade.
+
+4.Resultados Iniciais
+> Métricas de Performance
+Os resultados da avaliação inicial do modelo são os seguintes:
+
+Acurácia: 0.917
+Precisão: 0.860
+Recall: 0.531
+F1-score: 0.645
+
+> Análise dos Resultados
+-Pontos Fortes:
+Alta Acurácia: O modelo apresenta uma alta taxa de acertos gerais, o que é promissor para a classificação dos diferentes tipos de comentários tóxicos.
+Boa Precisão: A maioria dos comentários classificados nas diferentes categorias de toxicidade pelo modelo são de fato corretos, minimizando falsos positivos.
+
+-Pontos Fracos:
+Baixo Recall: O modelo tem dificuldade em identificar todos os casos de cada categoria de toxicidade, resultando em muitos falsos negativos.
+Moderado F1-score: O balanço entre precisão e recall ainda pode ser melhorado para garantir uma detecção mais robusta e confiável dos comentários tóxicos nas diversas categorias.
+
+-Conclusão
+Os resultados iniciais mostram que o modelo tem uma boa capacidade de identificar corretamente os diferentes tipos de comentários tóxicos (alta precisão e acurácia), mas ainda precisa melhorar na identificação de todos os casos positivos de cada categoria (recall). Essa análise inicial fornece uma base sólida para ajustes e melhorias subsequentes no modelo, visando uma classificação mais abrangente e eficaz.
